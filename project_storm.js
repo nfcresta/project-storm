@@ -1,7 +1,5 @@
-storm_data = 'clean_storm.json'
-
 // Fetch the JSON data and console log it
-d3.json(storm_data).then(function(d) {
+d3.json("clean_storm.json").then(function(d) {
   console.log(d.schema)
   console.log(d.data);
   console.log(d.data.length)
