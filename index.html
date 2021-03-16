@@ -5,46 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Project Storm</title>
-  <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-<div class=“container”>
-    <div class=“row”>
-      <div class=“col-md-12 jumbotron text-center”>
-        <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>2020 U.S. Weather Dashboard</h1>
+        <p>If you thought COVID was the worst thing about 2020, wait until you see what these states went through during this year...</p>
       </div>
     </div>
-    <div class=“row”>
-      <div class=“col-md-2”>
-        <div class=“well”>
-          <h5>Test Subject ID No.:</h5>
-          <select id=“selDataset” onchange=“optionChanged(this.value)“></select>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>State Name:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
-        <div class=“panel panel-primary”>
-          <div class=“panel-heading”>
-            <h3 class=“panel-title”>Demographic Info</h3>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">State Info</h3>
           </div>
-          <div id=“sample-metadata” class=“panel-body”></div>
+          <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
-      <div class=“col-md-5">
-        <div id=“bar”></div>
+      <div class="col-md-5">
+        <div id="bar"></div>
       </div>
-      <div class=“col-md-5">
-        <div id=“gauge”></div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
       </div>
     </div>
-    <div class=“row”>
-      <div class=“col-md-12”>
-        <div id=“bubble”></div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
       </div>
     </div>
   </div>
-  <script src=“https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js”></script>
-  <script src=“https://cdn.plot.ly/plotly-latest.min.js”></script>
-  <script src=“static/js/app.js”></script>
-  <script src=“samples.json”></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="project_storm.js"></script>
+  <script src="clean_storm.json"></script>
 </body>
 </html>
