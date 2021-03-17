@@ -18,17 +18,28 @@
 
 function init(){
   d3.json("clean_storm.json").then(d => {
-    var state_names = d.state;
         // push state names to dropdown menu
-        for (var i=0; i <= state_names.length; i++){
-            var dropdownMenu = d3.select("#selDataset");
-            var options = dropdownMenu.append("option");
-            options.text(state_names[i]);
-        };
+        var state_names = d.data.map(item => item.state).filter((value, index, self) => self.indexOf(value) === index)
 
+        for (var i=0; i <= state_names.length; i++){
+          var dropdownMenu = d3.select("#selDataset");
+          var options = dropdownMenu.append("option");
+          options.text(state_names[i]);
+        };
   });
 
 };
 
 init();
 
+
+
+            
+
+    // var state_names = d.data, output = []
+// for (var i=0; i <= d.data.length; i++){
+//           if(d.data[i].state) continue;
+//           d.data[i].state = true;
+//           output.push(d.data[i].state);            
+//         };
+//         console.log(output);
