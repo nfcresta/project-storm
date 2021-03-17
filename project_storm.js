@@ -36,24 +36,18 @@ function init(){
   });
 };
 
-function updatePlots(){
+function updatePlots(state_choice){
   d3.json("clean_storm.json").then(d => {
+      var filterArr = state_names.filter(sampleObject => sampleObject.id == sample);
+      var event_type = d.data.event_type
+      var state = d.data.state
+      var event_id = d.data.event_id
+      var event_month = d.data.event_month
+      var 
 
-
+      // console.log(d.data);
 
   });
 };
 
 init();
-
-
-
-            
-
-    // var state_names = d.data, output = []
-// for (var i=0; i <= d.data.length; i++){
-//           if(d.data[i].state) continue;
-//           d.data[i].state = true;
-//           output.push(d.data[i].state);            
-//         };
-//         console.log(output);
