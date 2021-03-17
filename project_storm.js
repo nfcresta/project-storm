@@ -27,8 +27,20 @@ function init(){
           var options = dropdownMenu.append("option");
           options.text(state_names[i]);
         };
-  });
 
+        // create inital plots
+        var first_state = state_names[0];
+        updatePlots(first_state);
+        // updateMetadata(first_state);
+  });
+};
+
+function updatePlots(){
+  d3.json("clean_storm.json").then(d => {
+    
+
+    
+  });
 };
 
 init();
