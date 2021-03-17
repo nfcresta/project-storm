@@ -19,7 +19,8 @@
 function init(){
   d3.json("clean_storm.json").then(d => {
         // push state names to dropdown menu
-        var state_names = d.data.map(item => item.state).filter((value, index, self) => self.indexOf(value) === index)
+        var state_array = [];
+        var state_names = d.data.map(item => item.state).filter((value, index, self) => self.indexOf(value) === index).sort()
 
         for (var i=0; i <= state_names.length; i++){
           var dropdownMenu = d3.select("#selDataset");
