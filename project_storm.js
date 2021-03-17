@@ -19,6 +19,7 @@
 function init(){
   d3.json("clean_storm.json").then(d => {
         // push state names to dropdown menu
+        // console.log(d.data);
         var state_array = [];
         var state_names = d.data.map(item => item.state).filter((value, index, self) => self.indexOf(value) === index).sort()
 
@@ -37,9 +38,9 @@ function init(){
 
 function updatePlots(){
   d3.json("clean_storm.json").then(d => {
-    
 
-    
+
+
   });
 };
 
