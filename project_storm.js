@@ -37,40 +37,23 @@ function init(){
 };
 
 function updatePlots(state_choice){
-  d3.json("clean_storm.json").then(d => {
-      var state_data = d.data;
-      var filterArr = state_data.filter(sampleObject => sampleObject.state == state_choice);
-      var result = filterArr[0];
-      var event_type = result.event_type;
-      var state = result.state;
-      // var event_id = result.event_id;
-      // var event_month = result.event_month;
+  d3.json("bar_data.json").then(d => {
+      console.log(d.data);
+      var filter_array = d.data.filter(sample => sample.state==state_choice);
+      console.log(filter_array);
+      var months = filter_array.map(sample => sample.event_month);
+      var e_count = filter_array.map(sample => sample.event_id);
+      console.log(months);
 
-      month_arr = [];
-      count_arr = [];
-
-      for (var i=0; i < filterArr.length; i++){
-      	if filterArr.event_month <>
-    	var event_id = filterArr[i].event_id
-    	var state = d.data[i].state
-    	var event_id = d.data[i].event_id
-    	test_arr.push([event_type, state, event_id])
-  		};
-      // console.log(d.data);
-      
       var trace1 = {
-      	x: event_month, 
-      	y: event_id.count(), 
-      	type:"bar"
+        x:months, y:e_count, type:"bar"
       };
-
       var data = [trace1];
-      var layout = {
-      	title: "Bar Chart"
-      };
-
+      var layout = {title:"Dummy Title"};
       Plotly.newPlot("bar", data, layout);
   });
 };
+
+
 
 init();
