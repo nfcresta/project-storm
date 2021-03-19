@@ -66,8 +66,39 @@ function updatePlots(state_choice){
       var data = [trace2];
       var layout = {title:"Pie Chart"};
       Plotly.newPlot("pie", data, layout);
+  });
 
+  d3.json("bubble_data.json").then(d => {
+    console.log(d.data);
+    var filter_array = d.data.filter(sample => sample.state==state_choice);
+    var e_injuries = filter_array.map(sample => sample.total_injuries);
+    var e_deaths = filter_array.map(sample => sample.total_deaths);
+    var damage_prop = filter_array.map(sample => sample.damage_property);
+    var damage_crop = filter_array.map(sample => sample.damage_crops);
+    console.log(e_injuries);
+    var trace3 = {
+      x: [e_injuries[0], e_deaths[0]],
+      y: ["Total Injuries", "Total Deaths"],
+      type: "bar",
+      orientation: "h"
+    };
+  var data = [trace3];
+  var layout = {
+      title: "Injuries and Fatalities"
+  };
+  Plotly.newPlot("barh", data, layout);
 
+  var trace4 = {
+    x: [damage_prop[0], damage_crop[0]],
+    y: ["Property Damage (USD)", "Property Crops (USD)"],
+    type: "bar",
+    orientation: "h"
+  };
+var data = [trace4];
+var layout = {
+    title: "Property Costs"
+};
+Plotly.newPlot("barh2", data, layout);
 
   });
 };
