@@ -49,8 +49,26 @@ function updatePlots(state_choice){
         x:months, y:e_count, type:"bar"
       };
       var data = [trace1];
-      var layout = {title:"Dummy Title"};
+      var layout = {title:"Bar Chart"};
       Plotly.newPlot("bar", data, layout);
+  });
+
+  d3.json("pie_data.json").then(d => {
+      console.log(d.data);
+      var filter_array = d.data.filter(sample => sample.state==state_choice);
+      var e_type = filter_array.map(sample => sample.event_type);
+      console.log(e_type);
+      var e_count = filter_array.map(sample => sample.event_id);
+    
+      var trace2 = {
+        values:e_count, labels:e_type, type:"pie"
+      };
+      var data = [trace2];
+      var layout = {title:"Pie Chart"};
+      Plotly.newPlot("pie", data, layout);
+
+
+
   });
 };
 
