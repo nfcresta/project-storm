@@ -96,7 +96,10 @@ function updatePlots(state_choice){
   };
 var data = [trace4];
 var layout = {
-    title: "Property Costs"
+    title: "Property Costs",
+    yaxis: {
+      automargin: true
+    }
 };
 Plotly.newPlot("barh2", data, layout);
 
