@@ -103,6 +103,10 @@ Plotly.newPlot("barh2", data, layout);
   });
 };
 
-
+// complete optionChanged function
+function optionChanged(newID){
+  updatePlots(newID);
+  // updateMetadata(newID);
+}
 
 init();
