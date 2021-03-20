@@ -46,10 +46,14 @@ function updatePlots(state_choice){
       console.log(months);
 
       var trace1 = {
-        x:months, y:e_count, type:"bar"
+        x:months, y:e_count, type:"bar",
       };
       var data = [trace1];
-      var layout = {title:"Bar Chart"};
+      var layout = {
+        title: `${state_choice} Natural Disaster Count<br>by Month (Jan - Jul)`,
+        xaxis: { title: "Month" },
+        yaxis: { title: "Number of Natural Disasters" }
+      };
       Plotly.newPlot("bar", data, layout);
   });
 
@@ -64,7 +68,7 @@ function updatePlots(state_choice){
         values:e_count, labels:e_type, type:"pie"
       };
       var data = [trace2];
-      var layout = {title:"Pie Chart"};
+      var layout = {title:`${state_choice} Proportion of Events (Jan - Jul)`};
       Plotly.newPlot("pie", data, layout);
   });
 
@@ -84,7 +88,7 @@ function updatePlots(state_choice){
     };
   var data = [trace3];
   var layout = {
-      title: "Injuries and Fatalities"
+      title: `${state_choice} Inuries and Fatalities (Jan - Jul)`
   };
   Plotly.newPlot("barh", data, layout);
 
@@ -96,7 +100,7 @@ function updatePlots(state_choice){
   };
 var data = [trace4];
 var layout = {
-    title: "Property Costs",
+    title: `${state_choice} Property Costs (Jan - Jul)`,
     yaxis: {
       automargin: true
     }
