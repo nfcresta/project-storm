@@ -51,8 +51,10 @@ function updatePlots(state_choice){
       var data = [trace1];
       var layout = {
         title: `${state_choice} Natural Disaster Count<br>by Month (Jan - Jul)`,
-        xaxis: { title: "Month" },
-        yaxis: { title: "Number of Natural Disasters" }
+        xaxis: { title: "Month" , tickmode: "linear"},
+        yaxis: { title: "Number of Natural Disasters" },
+        height: 600,
+        width: 500
       };
       Plotly.newPlot("bar", data, layout);
   });
@@ -68,7 +70,11 @@ function updatePlots(state_choice){
         values:e_count, labels:e_type, type:"pie"
       };
       var data = [trace2];
-      var layout = {title:`${state_choice} Proportion of Events (Jan - Jul)`};
+      var layout = {
+        title:`${state_choice} Proportion of Events (Jan - Jul)`, 
+        height: 600,
+        width: 700
+    };
       Plotly.newPlot("pie", data, layout);
   });
 
@@ -82,13 +88,16 @@ function updatePlots(state_choice){
     console.log(e_injuries);
     var trace3 = {
       x: [e_injuries[0], e_deaths[0]],
-      y: ["Total Injuries", "Total Deaths"],
+      y: ["Injuries", "Deaths"],
       type: "bar",
       orientation: "h"
     };
   var data = [trace3];
   var layout = {
-      title: `${state_choice} Injuries and Fatalities (Jan - Jul)`
+      title: `${state_choice} Injuries and Fatalities (Jan - Jul)`,
+      xaxis: { title: "Total Count"},
+      // height: 600,
+      // width: 600
   };
   Plotly.newPlot("barh", data, layout);
 
@@ -101,11 +110,18 @@ function updatePlots(state_choice){
 var data = [trace4];
 var layout = {
     title: `${state_choice} Property Costs (Jan - Jul)`,
+    xaxis: { title: "Total Damage (USD)"},
     yaxis: {
       automargin: true
     }
+    // height: 600,
+    // width: 600
+    // paper_bgcolor: "rgba(0,0,0,0)"
 };
-Plotly.newPlot("barh2", data, layout);
+
+var config = {responsive: true};
+
+Plotly.newPlot("barh2", data, layout, config);
 
   });
 };

@@ -1,0 +1,15 @@
+body {
+    background-image: url("background_images/image1.png");
+    background-size: cover;
+    opacity: 0.8;
+}
+
+#barh {
+    margin: 20px;
+    opacity: 1 !important;
+}
+
+#barh2 {
+    margin: 20px;
+    opacity: 1 !important;
+}

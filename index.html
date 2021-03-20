@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,45 +10,48 @@
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
         <h1>2020 U.S. Weather Dashboard</h1>
-        <p>If you thought COVID was the worst thing about 2020, wait until you see what these states went through during this year...</p>
+        <p>If you thought COVID was the worst thing about 2020, wait until you see what these states went through during
+          this year...</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="well">
-          <h3>State Name:</h3>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-        <!-- <div class="panel panel-primary">
+    <div class="col-md-12">
+      <div class="well">
+        <h3>State Name:</h3>
+        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+      </div>
+      <!-- <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title">State Info</h3>
           </div>
           <div id="sample-metadata" class="panel-body"></div>
         </div> -->
-      </div>
-      <div class="col-md-5">
-        <div id="bar"></div>
-      </div>
-      <div class="col-md-6">
-        <div id="pie"></div>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div id="barh"></div>
-      </div>
-      <div class="col-md-6">
-        <div id="barh2"></div>
-      </div>
+    <div class="col-md-5">
+      <div id="bar"></div>
+    </div>
+    <div class="col-md-7">
+      <div id="pie"></div>
+    </div>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <div id="barh"></div>
+    </div>
+    <div class="col-md-6">
+      <div id="barh2"></div>
     </div>
   </div>
+  </div>
+</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="project_storm.js"></script>
+  <link rel="stylesheet" href="style.css">
   <!-- <script src="clean_storm.json"></script> -->
 </body>
+
 </html>
