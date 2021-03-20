@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Project Storm</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -30,20 +31,31 @@
           <div id="sample-metadata" class="panel-body"></div>
         </div> -->
     </div>
-    <div data-aos="fade-left" class="col-md-5">
+    <div data-aos="flip-left"
+    data-aos-duration="1000"
+   class="col-md-12">
       <div id="bar"></div>
     </div>
-    <div class="col-md-7">
+    <div class="row">
+    <div data-aos="flip-up" class="col-md-12">
       <div id="pie"></div>
     </div>
-  
+  </div>
   <div class="row">
-    <div class="col-md-6">
+  <div data-aos="zoom-in-up"
+  data-aos-duration="1000"
+  class="row">
+    <div class="col-md-12">
       <div id="barh"></div>
     </div>
-    <div class="col-md-6">
+  </div>
+  <div data-aos="zoom-in-down" 
+  data-aos-duration="1000"
+  class="row">
+    <div class="col-md-12">
       <div id="barh2"></div>
     </div>
+  </div>
   </div>
   </div>
 </div>
@@ -53,6 +65,10 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" href="style.css">
   <!-- <script src="clean_storm.json"></script> -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
