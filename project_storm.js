@@ -88,7 +88,7 @@ function updatePlots(state_choice){
     };
   var data = [trace3];
   var layout = {
-      title: `${state_choice} Inuries and Fatalities (Jan - Jul)`
+      title: `${state_choice} Injuries and Fatalities (Jan - Jul)`
   };
   Plotly.newPlot("barh", data, layout);
 
