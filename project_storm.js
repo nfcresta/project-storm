@@ -14,7 +14,6 @@ function init(){
       // create inital plots
       var first_state = state_names[0];
       updatePlots(first_state);
-      // updateMetadata(first_state);
   });
 };
 
@@ -38,7 +37,7 @@ function updatePlots(state_choice){
       
       var data = [trace1];
       var layout = {
-        title: `<b>${state_choice} Natural Disaster Count<br>by Month (Jan - Jul)</b>`,
+        title: `<b>${state_choice} Weather Event Count<br>by Month (Jan - Jul)</b>`,
         xaxis: { title: "Month" , tickmode: "linear" },
         yaxis: { title: "Number of Natural Disasters" }
       };
@@ -122,7 +121,6 @@ function updatePlots(state_choice){
 // complete optionChanged function
 function optionChanged(newID){
   updatePlots(newID);
-  // updateMetadata(newID);
 }
 
 init();
